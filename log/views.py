@@ -54,3 +54,4 @@ def delete(request, pk):
         board.delete()
         return redirect("log:index")
     return redirect("log:index")
+

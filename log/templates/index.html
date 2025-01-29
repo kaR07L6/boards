@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}投稿一覧{% endblock %}
+{% block title %}一覧{% endblock %}
 
 {% block content %}
     <section>
-        <h1>投稿一覧</h1>
+        <h1>一覧</h1>
         <table class="table">
             <colgroup>
                 <col style="width: 10%;">
@@ -14,8 +14,8 @@
             </colgroup>
             <thead>
                 <tr>
-                    <th scope="col">投稿ID</th>
-                    <th scope="col">イベント名</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">作品名</th>
                     <th scope="col">投稿日時</th>
                     <th scope="col">更新日時</th>
                 </tr>
@@ -31,6 +31,6 @@
                 {% endfor %}
             </tbody> 
         </table>
-        <a href="{% url 'log:new' %}" class="btn btn-primary">新規投稿</a>
+        <a href="{% url 'log:new' %}" class="btn btn-primary">新規</a>
     </section>
 {% endblock %}

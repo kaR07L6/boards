@@ -6,8 +6,8 @@
 <section>
     <h2>{{ board.title }}の詳細</h2>
     <p>{{ board.content }}</p>
-    <p>名前：{{ board.name }}</p>
-    <p>作成日時：{{ board.created_at }}</br>
+    <p>作者名：{{ board.name }}</p>
+    <p>登録日時：{{ board.created_at }}</br>
        更新日時：{{ board.updated_at }}
     </p>
     <a href="{% url 'log:edit' pk=board.id %}" class="btn btn-primary">編集</a>

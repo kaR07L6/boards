@@ -28,5 +28,5 @@ urlpatterns = [
     path("", views.HomeView.as_view(), name="index"),
     path("login/", include("login.urls")),
     path("admin/", admin.site.urls),
-    path("", include("log.urls")),
+    path("log/", include("log.urls")),
 ]

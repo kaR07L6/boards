@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 app_name = "log"
 
 
@@ -13,4 +14,3 @@ urlpatterns = [
     path("<int:pk>/update", views.update, name="update"),
     path("<int:pk>/delete", views.delete, name="delete"),
 ]
-

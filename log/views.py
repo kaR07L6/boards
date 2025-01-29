@@ -5,7 +5,7 @@ from .models import Board
 
 def index(request):
     boards = Board.objects.all().order_by("-updated_at")
-    return render(request, "index.html", {"boards": boards})
+    return render(request, "log/index.html", {"boards": boards})
 
 
 def new(request):
@@ -18,7 +18,7 @@ def create(request):
         form = BoardForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("log:index")
+            return redirect("log/index")
     else:
         form = BoardForm()
     return render(request, "new.html", {"form": form})
@@ -41,7 +41,7 @@ def update(request, pk):
         form = BoardForm(request.POST, instance=board)
         if form.is_valid():
             form.save()
-            return redirect("log:show", pk=pk)
+            return redirect("log/show", pk=pk)
     else:
         form = BoardForm(instance=board)
     return render(request, "edit.html", {"form": form, "board": board})
@@ -54,4 +54,3 @@ def delete(request, pk):
         board.delete()
         return redirect("log:index")
     return redirect("log:index")
-

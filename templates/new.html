@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+
+{% block title %}新規登録{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>読んだ本を記録する</h2>
+        <form action="{% url 'log:create' %}" method="post" class="mt-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="{{ form.title.id_for_label }}" class="form-label">作品名</label></br>
+            </div>
+            {{ form.title }}
+            <div class="mb-3">
+            <label for="{{ form.content.id_for_label }}" class="form-label">感想</label></br>
+            {{ form.content }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.namd.id_for_label }}" class="form-label">作者名</label></br>
+                {{ form.name }}
+            </div>
+            <a href="{% url 'log:index' %}" class="btn btn-primary">一覧に戻る</a>
+            <button type="submit" class="btn btn-success">記録</button>
+        </form>
+    </section>
+{% endblock %}

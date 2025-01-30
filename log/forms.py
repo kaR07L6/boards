@@ -5,4 +5,4 @@ from .models import Board
 class BoardForm(forms.ModelForm):
     class Meta:
         model = Board
-        fields = ["title", "content", "name", "genre"]
+        fields = ["title", "content", "name"]

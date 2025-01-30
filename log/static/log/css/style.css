@@ -1,0 +1,13 @@
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+h2 {
+    color: blue;
+}
+
+
+.btn i {
+    color: #ffcc00; /* 星アイコンの色を黄色に */
+    font-size: 1.5rem; /* アイコンのサイズを大きく */
+}

@@ -8,6 +8,10 @@ h2 {
 
 
 .btn i {
-    color: #ffcc00; /* 星アイコンの色を黄色に */
+    color: #4800ff; /* 星アイコンの色を黄色に */
     font-size: 1.5rem; /* アイコンのサイズを大きく */
+}
+
+html {
+    color: black;
 }

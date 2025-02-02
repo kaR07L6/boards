@@ -145,3 +145,37 @@ table {
     font-weight: bold;  /* ヘッダー部分の文字を太字 */
 }
 
+
+
+
+
+/* フッターのスタイル */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0077cc;  /* フッターの背景色 */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;  /* ボタンを中央に配置 */
+    gap: 20px;  /* ボタン間に間隔を追加 */
+}
+
+.footer-button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00aaff;  /* 水色の背景 */
+    border-radius: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #0077cc;  /* ボタンのホバー時の色 */
+}

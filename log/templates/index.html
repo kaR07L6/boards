@@ -16,8 +16,8 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">作品名</th>
-                    <th scope="col">投稿日時</th>
-                    <th scope="col">更新日時</th>
+                    <!--<th scope="col">投稿日時</th>
+                    <th scope="col">更新日時</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -25,11 +25,11 @@
                 <tr>
                     <td scope="col">{{ board.id }}</td>
                     <td scope="col"><a href="{% url 'log:show' pk=board.id %}">{{ board.title }}</td>
-                    <td scope="col">{{ board.created_at }}</td>
-                    <td scope="col">{{ board.updated_at }}</td>
+                    <!--<td scope="col">{{ board.created_at }}</td>
+                    <td scope="col">{{ board.updated_at }}</td> -->
                 </tr>
                 {% endfor %}
-            </tbody> 
+            </tbody>
         </table>
         <a href="{% url 'log:new' %}" class="btn btn-primary">記録</a>
     </section>

@@ -99,3 +99,7 @@ def remove_favorite(request):
         favorite.delete()
         return redirect("index")
     return redirect("index")
+
+
+def read_timer(request):
+    return render(request, "read.html")

@@ -12,15 +12,15 @@
             </div>
             {{ form.title }}
             <div class="mb-3">
-            <label for="{{ form.content.id_for_label }}" class="form-label">感想</label></br>
-            {{ form.content }}
-            </div>
-            <div class="mb-3">
              <label for="{{ form.name.id_for_label }}" class="form-label">作者名</label></br>
             {{ form.name }}
             </div>
-            <button type="submit" class="btn btn-success">更新</button>
-            <a href="{% url 'log:show' pk=board.id %}" class="btn btn-primary">戻る</a>
+            <div class="mb-3">
+                <label for="{{ form.content.id_for_label }}" class="form-label">感想</label></br>
+                {{ form.content }}
+                </div>
+            <button type="submit" class="btn2">更新</button>
+            <a href="{% url 'log:show' pk=board.id %}" class="btn2">一覧に戻る</a>
         </form>
     </section>
 {% endblock %} 

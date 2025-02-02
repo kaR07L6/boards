@@ -4,7 +4,6 @@
 
 {% block content %}
     <section>
-        <h1>一覧</h1>
         <form method="gGET" action="{% url 'log:search' %}" class="flex">
             <div class="col">
                 <input type="text" name="query" id="id_query" class="form-control" placeholder="検索">
@@ -21,7 +20,8 @@
             </div>
         </form>
         <td>
-            <a href="{% url 'log:read' %}" class="btn btn-info">読む</a>
+            <a href="{% url 'log:new' %}" class="btn2 btn-up">読んだ本を記録する</a>
+            <a href="{% url 'log:read' %}" class="btn2 btn-up">本を読む</a>
         </td>
         
         <table class="table">
@@ -68,6 +68,5 @@
                 {% endfor %}
             </tbody> 
         </table>
-        <a href="{% url 'log:new' %}">記録</a>
     </section>
 {% endblock %}

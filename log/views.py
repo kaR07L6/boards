@@ -103,3 +103,7 @@ def remove_favorite(request):
 
 def read_timer(request):
     return render(request, "read.html")
+
+
+def home(request):
+    return render(request, "home.html")

@@ -5,8 +5,8 @@
 }
 
 .logo {
-    width: 50px;  /* 画像の幅 */
-    height: auto;  /* 高さを自動調整 */
+    width: 50px;  /* 画像幅 */
+    height: auto;  /* 高さ自動調整 */
 }
 
 
@@ -68,38 +68,54 @@
 
 /* 共通のボタンスタイル */
 .btn2 {
-    background-color: #00aaff; /* 水色 */
-    color: white; /* 白い文字 */
-    border-radius: 7px; /* 角丸 */
-    padding: 7px 20px; /* 内側の余白 */
-    font-size: 16px; /* フォントサイズ */
-    text-align: center; /* テキストを中央揃え */
-    border: none; /* 枠線を消す */
-    text-decoration: none; /* リンクの下線を消す */
-    display: inline-block; /* ボタンが横並びに表示されるように */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 160px;
+    padding: 10px 25px;
+    font-family: "Noto Sans Japanese";
+    line-height: 1.8;
+    text-decoration: none;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+.btn2:before {
+    content: "\f879";
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 12px;
+    color: #333;
+    transition: 0.3s ease-in-out;
+}
+.btn2:hover:before {
+    color: #fff;
 }
 
 /* ボタンにホバー効果 */
 .btn2:hover {
-    background-color: #0088cc; /* ホバー時に少し濃い水色 */
-    transform: scale(1.05); /* ボタンを少し大きくする */
+    background: #313131;
+    color: #FFF;
 }
 
-/* 追加のボタンタイプ（例: 削除ボタン） */
-.btn2-danger {
-    background-color: #ff6666; /* 赤っぽい水色 */
-}
-
-.btn2-danger:hover {
-    background-color: #cc4444; /* ホバー時に濃く */
-}
 
 
 .btn-up {
     position: relative;
     margin-top: 50px; /* 上に10pxずらす */
 }
+
+td {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
 
 
 
@@ -179,3 +195,5 @@ table {
 .footer-button:hover {
     background-color: #0077cc;  /* ボタンのホバー時の色 */
 }
+
+

@@ -124,76 +124,27 @@ td {
 
 
 
-/* テーブルの中央寄せ */
-table {
-    margin: 40px auto;  /* 上部に40pxの余白を追加し、左右は自動で中央揃え */
-    width: 90%;  /* テーブルの幅を調整したい場合 */
-    
-}
-
-/* テーブルのセル内のボタンの余白調整 */
-.table .btn {
-    margin-top: 5px;  /* ボタンと上の要素との間隔を広げる */
-}
-
-/* テーブル内の全体的なパディングを調整したい場合 */
-.table td, .table th {
-    padding: 12px;  /* セルの内側の余白を調整 */
-}
-
-/* テーブルの外枠とセルに水色のボーダーを追加 */
 .table {
-    border-collapse: collapse; /* セル間の隙間をなくし、ボーダーが一体化するように */
-    width: 90%;  /* 必要に応じて調整 */
-    margin: 40px auto;  /* 中央配置、上に余白 */
-
+    border-collapse: collapse;
+    width: 90%;
+    margin: 40px auto;
+    table-layout: fixed; /* 列幅を固定 */
 }
 
-.table th, .table td {
-    border: 1px solid lightblue;  /* 水色のボーダー */
-    padding: 12px;  /* セル内の余白を調整 */
-    text-align: center;  /* テキストを中央寄せ */
+.table tr {
+    display: table-row; /* flex の影響を防ぐ */
 }
 
-/* テーブルのヘッダー部分に少し強いボーダーを追加したい場合 */
-.table th {
-    background-color: #f0f8ff;  /* ヘッダー部分の背景色 */
-    font-weight: bold;  /* ヘッダー部分の文字を太字 */
-}
-
-
-
-
-
-/* フッターのスタイル */
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0077cc;  /* フッターの背景色 */
-    padding: 10px 0;
+.table td, .table th {
+    display: table-cell; /* flex の影響を防ぐ */
+    border: 1px solid lightblue;
+    padding: 12px;
     text-align: center;
+    min-width: 100px; /* 列の最小幅を確保 */
 }
 
-.footer-container {
-    display: flex;
-    justify-content: center;  /* ボタンを中央に配置 */
-    gap: 20px;  /* ボタン間に間隔を追加 */
+/* ボタンのスタイル */
+.button-container {
+    text-align: center;
+    margin-bottom: 20px;
 }
-
-.footer-button {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #00aaff;  /* 水色の背景 */
-    border-radius: 20px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.footer-button:hover {
-    background-color: #0077cc;  /* ボタンのホバー時の色 */
-}
-
-

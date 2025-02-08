@@ -17,18 +17,27 @@
     align-items: center; /* 縦方向に中央寄せ */
     position: relative;
     margin-top: -60px;
+    
 }
 
 .col, .col2, .col3 {
     margin-right: 10px; /* 各入力項目の間隔を調整 */
+    
+}
+
+.col2, .col3 {
+    position: relative;
+    right: 350px; 
 }
 
 /* 各入力欄 */
 .col input, .col2 select {
     font-size: 16px; /* フォントサイズを大きく */
     padding: 1.5%; /* 内側の余白を大きく */
-    height: 30px; /* 高さを調整 */
+    height: 38px; /* 高さを調整 */
     border: 1.5px solid #999;
+    width: 110px;
+    border-radius: 4px;
 }
 
 .col2 select {
@@ -43,10 +52,10 @@
     padding: 5px 20px; /* ボタンの内側余白を大きく */
     height: 38px; /* 高さを調整 */
     border: 2px solid #999;
+    border-radius: 4px;
 }
 
 .col3 button:before {
-    content: "\f201";
     position: relative;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -66,6 +75,8 @@
 
 
 
+
+
 /* 共通のボタンスタイル */
 .btn2 {
     background: #eee;
@@ -74,7 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 0;
     max-width: 160px;
     padding: 10px 25px;
     font-family: "Noto Sans Japanese";
@@ -85,7 +96,6 @@
     font-weight: 500;
 }
 .btn2:before {
-    content: "\f879";
     position: relative;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -108,16 +118,32 @@
 .btn-up {
     position: relative;
     margin-top: 50px; /* 上に10pxずらす */
-}
-
-td {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
 }
 
 
 
+
+.btn-container {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    gap: 30px; /* ボタンの間隔 */
+}
+
+
+/* index.html専用のボタンスタイル */
+.index-page .btn2 {
+    display: inline-block;
+    width: 250px; /* 横幅を広げる */
+    padding: 10px 0; /* 高さは変えない */
+    text-align: center;
+    font-size: 16px;
+    min-width: 210px; /* 最小幅を広げる */
+    padding: 12px 30px; /* 左右の余白を増やす */
+    
+}
 
 
 
@@ -125,10 +151,12 @@ td {
 
 
 .table {
+    display:table;
     border-collapse: collapse;
     width: 90%;
     margin: 40px auto;
     table-layout: fixed; /* 列幅を固定 */
+    flex-direction: column;
 }
 
 .table tr {
@@ -148,3 +176,571 @@ td {
     text-align: center;
     margin-bottom: 20px;
 }
+
+
+
+
+
+.btn3 {
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    max-width: 160px;
+    padding: 10px 25px;
+    font-family: "Noto Sans Japanese";
+    line-height: 1.8;
+    text-decoration: none;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    border: none; /* ボタンのデフォルトの枠線を消す */
+    cursor: pointer; /* クリック可能に */
+    font-size: 16px;
+}
+
+.btn3:hover {
+    background: #313131;
+    color: #FFF;
+}
+
+
+.btn-group {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    gap: 10px; /* ボタンの間隔を調整 */
+    margin-top: 20px; /* 必要なら上の余白を追加 */
+}
+
+
+
+
+
+
+/* ボタンを中央に配置 */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* ボタンの間隔 */
+    width: 100%; /* 横幅いっぱいに */
+    margin-top: 20px; /* 上の余白 */
+}
+
+
+
+
+
+
+
+
+
+
+/* 星ボタンのスタイル */
+.star-btn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 0px solid #ccc; /* 枠の色 */
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+/* 星の中にアイコンを描く */
+.star-btn::before {
+    content: '\2605'; /* Unicode for a star (★) */
+    font-size: 20px;
+    color: #ccc; /* 枠と同じ色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 塗りつぶされた星 */
+.star-btn.filled::before {
+    color: gold; /* 塗りつぶしの色 */
+}
+
+/* ホバー時に塗りつぶしの色を変える */
+.star-btn:hover {
+    border-color: gold;
+}
+
+.star-btn:hover::before {
+    color: gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* セクション全体のスタイル */
+.form-section {
+    display: flex;
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    padding: 0 15px; /* 横の余白 */
+    box-sizing: border-box; /* 余白を含めたサイズ計算 */
+}
+
+/* フォームコンテナのスタイル */
+.form-container {
+    width: 100%;
+    max-width: 400px;  /* 最大幅を400pxに設定 */
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* 各フォームグループのスタイル */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ラベルのスタイル */
+.form-label1, .form-label2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: -5px;
+    display: block;
+    text-align: center;  /* ラベルを中央揃え */
+}
+
+/* 入力欄のスタイル */
+input[type="text"],
+textarea {
+    width: 100%;   /* 入力欄の横幅を100%に設定 */
+    max-width: 350px;  /* 入力欄の最大横幅を350pxに設定 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;  /* パディングを含めた幅の計算 */
+    margin-left: auto;
+    margin-right: auto;  /* 横方向の中央揃え */
+    display: block;  /* ブロック要素として扱う */
+    
+}
+
+/* 入力欄のスタイル（textarea） */
+textarea {
+    min-height: 120px;
+    align-items: center; /* 横方向に中央揃え */
+    justify-content: center; /* 縦方向に中央揃え */
+    
+    
+}
+
+/* 各フォームグループのスタイル（ラベルと入力欄の間隔を調整） */
+.label1 {
+    margin-bottom: 10px;
+}
+.mb-3 {
+    margin-bottom: 15px; /* 余白を少し調整 */
+}
+
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* 見出し文字を中央に配置 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form.flex {
+    display: flex;
+    justify-content: flex-end;  /* 右寄せ */
+    align-items: center;
+    margin-top: 20px;  /* 少し下に下げる */
+}
+
+form .col, form .col2, form .col3 {
+    margin-left: 10px; /* 要素の間隔を調整 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* show.html専用のセクションスタイル */
+.show-page {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* ヘッダーテキスト（タイトル）のスタイル */
+.show-page h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* その他のテキストのスタイル */
+.show-page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* セクション全体のデザイン */
+.timer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* タイマー表示のスタイル */
+.timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 330px;
+    margin-top: 20px;
+}
+
+
+
+/* シンプルなボタンのデザイン */
+.timer-section .timer-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #61adff; /* ブルー */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* ホバー時のエフェクト */
+.timer-section .timer-button:hover {
+    background-color: #007bff; /* ホバー時に色を変える */
+    transform: translateY(-2px); /* 少し上に浮かせる */
+}
+
+/* 押したときのエフェクト */
+.timer-section .timer-button:active {
+    transform: translateY(1px); /* 押した時に少し沈ませる */
+}
+
+/* ボタンの配置（中央） */
+.timer-section .timer-button {
+    margin: 10px;
+}
+
+/* 一覧に戻るボタンのデザイン */
+.back-button {
+    margin-top: 30px; /* タイマーのボタンとの間隔を広げる */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* セクション全体を中央に配置 */
+.mypage-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* ビューポートの高さに合わせる */
+    box-sizing: border-box;
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* フォントを変更 */
+}
+
+/* タイトルのデザイン */
+.mypage-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* タイトルを大文字に */
+}
+
+/* 本の数表示 */
+.board-count {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* 数字を強調 */
+.board-count span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #61adff; /* 数字の色をブルーに */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* new-pageクラスを指定して新規登録ページのみ中央揃え */
+.new-page {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平方向に中央揃え */
+    justify-content: center; /* 垂直方向に中央揃え */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    text-align: center; /* テキストを中央揃え */
+    margin-top: -70px;
+}
+
+/* フォームを中央に配置 */
+.new-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* フォームの中身を中央揃え */
+    width: 100%;
+    max-width: 500px; /* フォームの最大幅を設定 */
+    padding: 20px;
+}
+
+/* ラベルと入力欄を中央に配置 */
+.new-page .label1, .new-page .form-label1, .new-page .form-label2 {
+    display: block;
+    text-align: center; /* ラベルを中央揃え */
+    margin-bottom: -10px;
+}
+
+/* ボタンも中央揃え */
+.new-page .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+.label1 {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 編集ページのフォームを中央揃え */
+.edit-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* フォームの中身を中央揃え */
+    justify-content: center;
+    height: 90vh; /* ビューポートの高さに合わせる */
+    text-align: center; /* テキストを中央揃え */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* フォームコンテナのスタイル */
+.edit-page form {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* フォームの中身を中央揃え */
+    width: 100%;
+    max-width: 500px; /* フォームの最大幅を設定 */
+    padding: 20px;
+    
+}
+
+/* 入力欄のスタイル */
+.edit-page input[type="text"],
+.edit-page textarea {
+    width: 100%;
+    max-width: 350px; /* 入力欄の最大横幅を350pxに設定 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* パディングを含めた幅の計算 */
+    margin-left: auto;
+    margin-right: auto; /* 横方向の中央揃え */
+    display: block;
+    width:  500px;
+    
+}
+
+/* ボタンの中央揃え */
+.edit-page .btn-group {
+    display: flex;
+    justify-content: center; /* ボタンを中央揃え */
+    gap: 10px; /* ボタンの間隔 */
+    margin-top: 20px; /* 上の余白を追加 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.edit-page h2 {
+    margin-top: -25px; /* 上の余白を減らす */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

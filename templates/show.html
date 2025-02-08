@@ -3,20 +3,23 @@
 {% block title %}{{ board.title }}{% endblock %}
 
 {% block content %}
-<section>
+<section class="show-page">
     <h2>{{ board.title }}</h2>
     <p>作者名：{{ board.name }}</p>
     <p>感想：{{ board.content }}</p>
     <p>記録日時：{{ board.created_at }}</br>
        更新日時：{{ board.updated_at }}
     </p>
+</section>
+
+<!-- ボタンをセクション外に配置 -->
+<div class="btn-group">
     <a href="{% url 'log:edit' pk=board.id %}" class="btn2">編集</a>
     <form action="{% url 'log:delete' pk=board.id %}" method="post" class="d-inline">
         {% csrf_token %}
         <input type="hidden" name="action" value="delete">
-        <button type="submit" class="btn2">削除</button>
+        <button type="submit" class="btn3">削除</button>
     </form>
     <a href="{% url 'log:index' %}" class="btn2 btn-danger">一覧に戻る</a>
-</section>
+</div>
 {% endblock %}
-

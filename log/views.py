@@ -106,4 +106,7 @@ def read_timer(request):
 
 
 def home(request):
-    return render(request, "home.html")
+    # 登録されたすべてのBoardを取得
+    boards_count = Board.objects.count()  # Boardの数を取得
+    return render(request, "home.html", {"boards_count": boards_count})
+

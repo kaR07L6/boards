@@ -19,16 +19,16 @@
 <body>
     <nav class="py-2 bg-body-tertiary border-bottom">
         <div class="d-flex flex-wrap">
-            <a href="{% url 'index' %}"
+            <a href="{% url 'log:index' %}"
                 class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none ms-3">
                 <img src="{% static 'logo.png' %}"  class="bi me-2" width="40" height="32" role="img"></img>
             </a>
-            <a href="{% url 'index' %}"
+            <a href="{% url 'log:index' %}"
                 class="nav d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4">{{ title }}</span>
             </a>
             <ul class="nav me-auto">
-                <li class="nav-item"><a href="{% url 'index' %}" class="nav-link link-body-emphasis px-2 active"
+                <li class="nav-item"><a href="{% url 'log:index' %}" class="nav-link link-body-emphasis px-2 active"
                         aria-current="page">Home</a></li>
             </ul>
             {% if user.is_authenticated %}

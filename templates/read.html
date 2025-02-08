@@ -3,13 +3,19 @@
 {% block title %}読書タイマー{% endblock %}
 
 {% block content %}
-<section>
+<section class="timer-section">
     <h2>読書タイマー</h2>
-    <div id="timer">00:00:00</div>
-    <button id="start">開始</button>
-    <button id="stop">停止</button>
-    <button id="reset">リセット</button>
+    <div id="timer" class="timer-display">00:00:00</div>
+    <div class="timer-buttons">
+        <button id="start" class="timer-button">開始</button>
+        <button id="stop" class="timer-button">停止</button>
+        <button id="reset" class="timer-button">リセット</button>
+    </div>
+    <div class="back-button">
+        <a href="{% url 'log:index' %}" class="btn2">一覧に戻る</a>
+    </div>
 </section>
+
 
 <script>
     let timer;
@@ -51,7 +57,5 @@
         document.getElementById("timer").textContent = "00:00:00";
     });
 </script>
-
-<a href="{% url 'log:index' %}" class="btn2">一覧に戻る</a>
 
 {% endblock %}
